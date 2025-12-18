@@ -10,6 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- MathJax for LaTeX Rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script>
         tailwind.config = {
@@ -432,7 +435,7 @@
                 </div>
             </div>
 
-            <!-- 7. THE GREAT CHALLENGE -->
+            <!-- 7. THE GREAT CHALLENGE (MathJax Enabled) -->
             <div class="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 bento-card bg-gradient-to-br from-blue-600 to-blue-700 text-white flex flex-col justify-center items-start relative overflow-hidden group border-none shadow-blue-200 shadow-lg">
                 
                 <div class="relative z-10 w-full">
@@ -442,8 +445,12 @@
                     </div>
                     <p class="text-xs text-blue-100 mb-4 opacity-90">Solve NP-Hard problems.</p>
                     
-                    <div class="bg-black/20 p-3 rounded-lg border border-white/10 w-full mb-4 font-mono text-center backdrop-blur-sm">
-                        <code class="text-[10px] text-blue-100">$$ H(s) = -\Sigma J_{ij} s_i s_j $$</code>
+                    <!-- Updated container for rendered LaTeX -->
+                    <div class="bg-black/20 p-3 rounded-lg border border-white/10 w-full mb-4 text-center backdrop-blur-sm">
+                        <!-- Using standard LaTeX sum notation and mathcal for Hamiltonian -->
+                        <div class="text-xs text-blue-100 font-medium">
+                            $$ \mathcal{H}(s) = -\sum J_{ij} s_i s_j $$
+                        </div>
                     </div>
                     
                     <button onclick="openModal('challenge')" class="text-xs bg-white/10 border border-white/40 text-white px-4 py-2.5 rounded-lg font-bold hover:bg-white hover:text-blue-700 transition w-full flex justify-center items-center gap-2">
